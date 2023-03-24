@@ -7,5 +7,5 @@ class categorie{
   String img;
 
 
-  categorie(this.id,this.name,this.img){}
+  categorie(this.id,this.name,this.img);
 }

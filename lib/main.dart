@@ -1,5 +1,8 @@
 import 'package:dalton/categorie_model.dart';
+import 'package:dalton/mealsView.dart';
 import 'package:flutter/material.dart';
+
+import 'datapage.dart';
 
 void main() {
   runApp( MyApp());
@@ -41,15 +44,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
 
-    List<categorie> l=[
-      categorie("0", "BURGER", "lib/assets/images/burger.png"),
-      categorie("0", "PIZZA", "lib/assets/images/pizza.jfif"),
-      categorie("0", "STEACK", "lib/assets/images/steack.jfif"),
-      categorie("0", "SALAD", "lib/assets/images/salad.jpg"),
-      categorie("0", "TACOS", "lib/assets/images/taco.jfif")
-    ];
+
 
     return Scaffold(
+
       appBar: AppBar(
         title: Text(widget.title),
       ),
@@ -80,7 +78,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 160,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: l.length,
+                itemCount: cat_list.length,
                 itemBuilder:(ctx,index){
                   return Container(
                     // color: Colors.red,
@@ -91,8 +89,8 @@ class _MyHomePageState extends State<MyHomePage> {
                       children: [
 
                         Container(
-                            height:120,width: 120,child: Image.asset(l[index].img)),
-                        Text(l[index].name),
+                            height:120,width: 120,child: Image.asset(cat_list[index].img)),
+                        Text(cat_list[index].name),
                       ],
                     ),
                   );
@@ -102,31 +100,50 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
 
-
+            Text("ALL ITEMS :"),
             Container(
               height: 620,
-              child: ListView.builder(
-                scrollDirection: Axis.vertical,
-                itemCount: l.length,
-                itemBuilder:(ctx,index){
-                  return Container(
-                    // color: Colors.red,
-                    margin: EdgeInsets.all(10),
-                    child: Column(
+              child:GridView(padding: const EdgeInsets.all(10),
+                  children: [
+                    ...(cat_list.map((e){
+                      return Meal(e.name, e.img);
+                        // Categoryitem(e.name,e.color);
+                    }
+                    ))
 
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
+                  ],
+                  gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
 
-                        Container(
-                            height:120,width: 120,child: Image.asset(l[index].img)),
-                        Text(l[index].name),
-                      ],
-                    ),
-                  );
-                } ,
+                    maxCrossAxisExtent: 300,
+                    mainAxisSpacing: 10,
+                    crossAxisSpacing: 20,
+                    childAspectRatio: 1.5,
 
 
+                  )
               ),
+              // ListView.builder(
+              //   scrollDirection: Axis.vertical,
+              //   itemCount: cat_list.length,
+              //   itemBuilder:(ctx,index){
+              //     return Container(
+              //       // color: Colors.red,
+              //       margin: EdgeInsets.all(10),
+              //       child: Column(
+              //
+              //         crossAxisAlignment: CrossAxisAlignment.center,
+              //         children: [
+              //
+              //           Container(
+              //               height:120,width: 120,child: Image.asset(cat_list[index].img)),
+              //           Text(cat_list[index].name),
+              //         ],
+              //       ),
+              //     );
+              //   } ,
+              //
+              //
+              // ),
             ),
 
 
