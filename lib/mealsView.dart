@@ -9,7 +9,7 @@ class Meal extends StatelessWidget {
 
       child: Column(children: [
         Container(
-            height: 120,
+            height: 80,
             width: double.infinity,
             child: Image.asset(img,fit: BoxFit.contain,)),
         Text(name)
