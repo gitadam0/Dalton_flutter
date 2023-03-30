@@ -4,9 +4,11 @@ import 'package:dalton/gridviewlist.dart';
 import 'package:dalton/mealsView.dart';
 import 'package:dalton/meals_by_cat.dart';
 import 'package:dalton/promoCard.dart';
+import 'package:dalton/tabscreen.dart';
 import 'package:flutter/material.dart';
 
 import 'datapage.dart';
+import 'main2.dart';
 
 void main() {
   runApp( MyApp());
@@ -24,9 +26,8 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.yellow,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-        routes: {
-        // "/":(context)=>main(),
+      routes: {
+         "/":(context)=>Tabscreen(),
           mealsbycat.routename:(context)=>mealsbycat(),
 
         }
@@ -48,12 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-    return Scaffold(
-
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Column(
+    return   Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
 
@@ -75,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             Text("ALL ITEMS :"),
 
-              GridviewList(),
+              Expanded(child: GridviewList()),
 
 
               // ListView.builder(
@@ -107,7 +103,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
           ],
-        ),
-    );
+        );
   }
 }

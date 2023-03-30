@@ -9,7 +9,7 @@ class GridviewList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 200,
+        height: 500,
         child:GridView(padding: const EdgeInsets.all(10),
     children: [
     ...(cat_list.map((e){
