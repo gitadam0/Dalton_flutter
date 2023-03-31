@@ -10,39 +10,58 @@ class Tabscreen extends StatefulWidget {
 }
 
 class _TabscreenState extends State<Tabscreen> {
+  int indexd=1;
+  List pages=[MyHomePage(title: "title"),Favorite(),Favorite()];
+  List p=[
+    {"page":MyHomePage(title: "title"),"title":"Home"},
+    {"page":MyHomePage(title: "title"),"title":"Home2"},
+    {"page":Favorite(),"title":"Favorite"},
+  ];
+
+  int pageselected=0;
+
+  selectpage(int i){
+    setState(() {
+      pageselected=i;
+    });
+
+  }
+
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(length: 5,
-        child: Scaffold(
+    return Scaffold(
           appBar: AppBar(
-            title: Text("LES DALTON"),
-            bottom: TabBar(
-              tabs: [
-                Tab(
-                  icon: Icon(Icons.add),
-                  text: "dgs",
-                ),
-                Tab(
-                  icon: Icon(Icons.hearing),
-                  text: "dgs",
-                ),
-                Tab(
-                  icon: Icon(Icons.face),
-                  text: "Favorite",
-                ),
-
-
-              ],
-            ),
+            title: Text(p[pageselected]["title"]),
           ),
+      drawer: Drawer(
+        child: Column(children: [
+          Text("data"),
+          Text("data")
+        ],),
+      ),
+      body: p[pageselected]["page"],
 
-          body: TabBarView(children: [
-            MyHomePage(title: "title"),
-            Favorite(),
-            MyHomePage(title: "titgsdgle"),
+      bottomNavigationBar: BottomNavigationBar(
+        onTap:selectpage ,
+        backgroundColor: Colors.yellow,
+        selectedFontSize: 20,
+        unselectedFontSize: 15,
+        selectedItemColor: Colors.black,
+        currentIndex: pageselected,
+        // type: BottomNavigationBarType.shifting,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+              label: "Home",
 
-          ]),
-        )
-    );
+          ),
+          BottomNavigationBarItem(icon: Icon(Icons.delete_forever),label: "Hhg"),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite),label: "Favorite")
+
+        ],),
+
+
+        );
+
   }
 }
