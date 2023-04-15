@@ -20,25 +20,40 @@ class mealsbycat extends StatelessWidget {
       appBar: AppBar(
         title: Text("widget.title"),
       ),
-      body: GridView(padding: const EdgeInsets.all(10),
-          children: [
-            ...(a.map((e){
-              return Meal(e.name, e.img);
-              // Categoryitem(e.name,e.color);
-            }
-            ))
+      body: Column(
+        children: [
+          Expanded(
+            child: GridView(padding: const EdgeInsets.all(10),
 
-          ],
-          gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+                    children: [
+                      ...(a.map((e){
+                        return Meal(e.name, e.img);
+                        // Categoryitem(e.name,e.color);
+                      }
+                      ))
 
-            maxCrossAxisExtent: 300,
-            mainAxisSpacing: 10,
-            crossAxisSpacing: 20,
-            childAspectRatio: 1.5,
+                    ],
+                    gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+
+                      maxCrossAxisExtent: 300,
+                      mainAxisSpacing: 10,
+                      crossAxisSpacing: 20,
+                      childAspectRatio: 1,
 
 
+                    )
+                ),
+          ),
+          FloatingActionButton(onPressed: (){
+            Navigator.of(context).pop();
+          },
+          child: Icon(Icons.delete),
           )
-      )
+        ],
+      ),
+
+        
+
 
 
       // Text(routearg_name.toString() +"   "+a.length.toString()),

@@ -1,4 +1,5 @@
 import 'package:dalton/Favorite_screen.dart';
+import 'package:dalton/drawerview.dart';
 import 'package:dalton/main.dart';
 import 'package:flutter/material.dart';
 
@@ -33,12 +34,7 @@ class _TabscreenState extends State<Tabscreen> {
           appBar: AppBar(
             title: Text(p[pageselected]["title"]),
           ),
-      drawer: Drawer(
-        child: Column(children: [
-          Text("data"),
-          Text("data")
-        ],),
-      ),
+      drawer: Drawerview(),
       body: p[pageselected]["page"],
 
       bottomNavigationBar: BottomNavigationBar(

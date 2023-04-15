@@ -8,9 +8,7 @@ class GridviewList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        height: 500,
-        child:GridView(padding: const EdgeInsets.all(10),
+    return GridView(padding: const EdgeInsets.all(20),
     children: [
     ...(cat_list.map((e){
     return Meal(e.name, e.img);
@@ -21,14 +19,14 @@ class GridviewList extends StatelessWidget {
     ],
     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
 
-    maxCrossAxisExtent: 300,
+    maxCrossAxisExtent: 200,
     mainAxisSpacing: 10,
     crossAxisSpacing: 20,
-    childAspectRatio: 1.5,
+    childAspectRatio: 1,
 
 
     )
     )
-    );
+    ;
   }
 }

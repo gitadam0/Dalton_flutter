@@ -13,13 +13,13 @@ List<categorie> cat_list=[
 ];
 
 List<meal> meal_list=[
-  meal("0", "BURGER","BURGER", "lib/assets/images/burger.png"),
-  meal("0", "BURGER","BURGER", "lib/assets/images/burger.png"),
-  meal("0", "BURGER","BURGER", "lib/assets/images/burger.png"),
-  meal("0", "PIZZA","PIZZA", "lib/assets/images/pizza.jfif"),
-  meal("0", "PIZZA","PIZZA", "lib/assets/images/pizza.jfif"),
-  meal("0", "PIZZA","PIZZA", "lib/assets/images/pizza.jfif"),
-  meal("0", "TACOS","TACOS", "lib/assets/images/taco.jfif"),
-  meal("0", "TACOS","TACOS", "lib/assets/images/taco.jfif"),
+  meal("0", "BURGER1","BURGER", "lib/assets/images/burger.png"),
+  meal("0", "BURGER2","BURGER", "lib/assets/images/burger.png"),
+  meal("0", "BURGER2","BURGER", "lib/assets/images/burger.png"),
+  meal("0", "PIZZA1","PIZZA", "lib/assets/images/pizza.jfif"),
+  meal("0", "PIZZA2","PIZZA", "lib/assets/images/pizza.jfif"),
+  meal("0", "PIZZA3","PIZZA", "lib/assets/images/pizza.jfif"),
+  meal("0", "TACOS1","TACOS", "lib/assets/images/taco.jfif"),
+  meal("0", "TACOS2","TACOS", "lib/assets/images/taco.jfif"),
 
 ];
