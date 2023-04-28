@@ -1,3 +1,4 @@
+import 'package:dalton/Mealmodel.dart';
 import 'package:flutter/material.dart';
 
 import 'datapage.dart';
@@ -10,11 +11,13 @@ class GridviewList extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView(padding: const EdgeInsets.all(20),
     children: [
-    ...(cat_list.map((e){
-    return Meal(e.name, e.img);
+    ...(
+        cat_list.map((e){
+          return Meal(e );
     // Categoryitem(e.name,e.color);
     }
-    ))
+    )
+    )
 
     ],
     gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(

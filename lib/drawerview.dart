@@ -60,7 +60,7 @@ class Drawerview extends StatelessWidget {
               }
               ),
           buildlisttile(
-              "Favorite",
+              "Filters",
               Icons.favorite,
                   (){
                 Navigator.of(context).pushReplacementNamed(Filters.routename);

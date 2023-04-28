@@ -10,6 +10,7 @@ import 'package:dalton/tabscreen.dart';
 import 'package:flutter/material.dart';
 import 'Favorite_screen.dart';
 
+import 'Mealmodel.dart';
 import 'datapage.dart';
 import 'main2.dart';
 
@@ -50,6 +51,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  List<meal> favorites=[];
 
   @override
   Widget build(BuildContext context) {

@@ -18,7 +18,7 @@ class mealsbycat extends StatelessWidget {
     return Scaffold(
 
       appBar: AppBar(
-        title: Text("widget.title"),
+        title: Text("widget.titledddd"),
       ),
       body: Column(
         children: [
@@ -27,7 +27,7 @@ class mealsbycat extends StatelessWidget {
 
                     children: [
                       ...(a.map((e){
-                        return Meal(e.name, e.img);
+                        return Meal(e);
                         // Categoryitem(e.name,e.color);
                       }
                       ))
@@ -47,8 +47,9 @@ class mealsbycat extends StatelessWidget {
           FloatingActionButton(onPressed: (){
             Navigator.of(context).pop();
           },
-          child: Icon(Icons.delete),
-          )
+          child: Icon(Icons.arrow_back_outlined),
+          ),
+
         ],
       ),
 

@@ -15,7 +15,7 @@ class _TabscreenState extends State<Tabscreen> {
   List pages=[MyHomePage(title: "title"),Favorite(),Favorite()];
   List p=[
     {"page":MyHomePage(title: "title"),"title":"Home"},
-    {"page":MyHomePage(title: "title"),"title":"Home2"},
+
     {"page":Favorite(),"title":"Favorite"},
   ];
 
@@ -51,7 +51,7 @@ class _TabscreenState extends State<Tabscreen> {
               label: "Home",
 
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.delete_forever),label: "Hhg"),
+
           BottomNavigationBarItem(icon: Icon(Icons.favorite),label: "Favorite")
 
         ],),

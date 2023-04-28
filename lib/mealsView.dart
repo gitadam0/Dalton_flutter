@@ -1,9 +1,10 @@
 import 'package:dalton/individualmeal.dart';
 import 'package:flutter/material.dart';
+
+import 'Mealmodel.dart';
 class Meal extends StatelessWidget {
-  String name;
-  String img;
-  Meal(this.name,this.img);
+  var _e;
+  Meal(this._e);
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -11,7 +12,7 @@ class Meal extends StatelessWidget {
 
         Navigator
             .of(context)
-            .pushNamed(Individual_meal.routename,arguments: name);
+            .pushNamed(Individual_meal.routename,arguments: _e);
 
       },
       child: Card(
@@ -22,9 +23,9 @@ class Meal extends StatelessWidget {
           Container(
                 height: 100,
                 width: double.infinity,
-                child: Image.asset(img,fit: BoxFit.contain,)),
+                child: Image.asset(_e.img,fit: BoxFit.contain,)),
 
-          Text(name)
+          Text(_e.name)
         ],),
       ),
     );

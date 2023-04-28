@@ -2,6 +2,9 @@
 import 'package:dalton/drawerview.dart';
 import 'package:flutter/material.dart';
 
+import 'datapage.dart';
+import 'mealsView.dart';
+
 class Favorite extends StatelessWidget {
   static String routename="favorite";
 
@@ -10,7 +13,28 @@ class Favorite extends StatelessWidget {
     return Scaffold(
 
       body: Center(
-        child: Text("d"),
+        child: favoritelist.isEmpty?Text("dffg")   :Expanded(
+          child: GridView(padding: const EdgeInsets.all(10),
+
+              children: [
+                ...(favoritelist.map((e){
+                  return Meal(e);
+                  // Categoryitem(e.name,e.color);
+                }
+                ))
+
+              ],
+              gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+
+                maxCrossAxisExtent: 300,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 20,
+                childAspectRatio: 1,
+
+
+              )
+          ),
+        ),
       ),
     );
   }
